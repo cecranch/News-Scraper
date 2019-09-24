@@ -2,25 +2,46 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Scraping With Mongoose</title>
+    <title>News Scraper</title>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque|Homemade+Apple&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/06d201a04b.js"></script>
+
     <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
+     .container {
+         padding: 10px;
+         margin: 10px;
+     }
+      #topRow {
+        color: black;
+        font-family: 'Homemade Apple', cursive;
+        background-color: white;
+        font-size: 40px;
+        height: 75px;
+        padding: 10px;
+      }
+      #photoDiv {
+          background-image: url("https://i.imgur.com/gYsYJi1.jpg");
+          background-size: 100%;
+          opacity: 0.8;
+          color: black;
+          padding: 10px;
+          height: 400px;
+          font-size: 30px;
+          width: 100%;
+          font-family: 'Darker Grotesque', sans-serif;
+          text-align: center;
+          display: inline-block;
       }
       #articles {
-        display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-      }
-      #notes {
-        float: right;
-        width: 30%;
-      }
+        background-color: grey;
+      }   
       textarea, input {
         display: block;
         width: 100%;
@@ -37,12 +58,19 @@
     </style>
   </head>
   <body>
-    <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>If you can do this...the homework should be no problem.</i></h2>
-      <div id="articles"></div>
-      <div id="notes"></div>
+<div class="container">
+    <div class="row" id="topRow">
+    <h1>Spill the Tea</h1>
     </div>
+    <div class="row" id="photoDiv">
+            <h1>Mongo Scraper: Daily Mail Edition</h1><br>
+            <button type="button" id="scrape" class="btn btn-outline-dark btn-lg">Spill the Tea</button>
+            <br>
+            <button type="button" id="viewSaved" class="btn btn-outline-dark btn-lg">Saved Articles</button><br>
+    </div>
+    <div class="row" id="articles">Articles</div>
+    <div id="notes">Notes</div>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
